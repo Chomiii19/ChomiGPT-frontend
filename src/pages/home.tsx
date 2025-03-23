@@ -34,6 +34,7 @@ function Main() {
         { withCredentials: true }
       );
 
+      console.log(response.data.data);
       navigate(`/chat/${response.data.data?._id}`);
     } catch (error) {
       console.error(error);

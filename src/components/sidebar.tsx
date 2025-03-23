@@ -186,6 +186,7 @@ function Login({
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const navigate = useNavigate();
+  const { refreshUser } = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -198,6 +199,7 @@ function Login({
         { withCredentials: true }
       );
       setModal(false);
+      refreshUser();
       navigate("/");
     } catch (error) {
       console.error(error);
@@ -267,6 +269,7 @@ function Signup({
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const navigate = useNavigate();
+  const { refreshUser } = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -279,6 +282,7 @@ function Signup({
         { withCredentials: true }
       );
       setModal(false);
+      refreshUser();
       navigate("/");
     } catch (error) {
       console.error(error);
