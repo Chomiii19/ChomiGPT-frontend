@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #3d81e0;
+  --color-backgroundColor: #16171b;
+  --color-lightBlack: #1d1e27;
+  --color-lighterBlack: #31343e;
+  --font-manrope: "Manrope", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-audioWide: "Audiowide", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background: #16171b;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d81e0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d62828;
+}
+
+* {
+  scrollbar-color: #3d81e0 #0000;
+  scrollbar-width: thin;
+}
+
+.dots::after {
+  content: ".";
+  animation: dotsAnimation 1.5s infinite steps(3);
+}
+
+@keyframes dotsAnimation {
+  0% {
+    content: ".";
+  }
+  33% {
+    content: "..";
+  }
+  66% {
+    content: "...";
+  }
+  100% {
+    content: "";
+  }
+}
